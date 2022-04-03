@@ -1,0 +1,217 @@
+{
+	"name": "gameplay",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Scrolling Background",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "OffsetSpeed",
+					"type": "number",
+					"initialValue": "2",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 408831449525982
+				},
+				{
+					"eventType": "comment",
+					"text": "Constantly offset the background to create an environment that feels more \"alive\"."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 130694531696304
+						}
+					],
+					"actions": [
+						{
+							"id": "set-image-offset-x",
+							"objectClass": "Background_title_screen",
+							"sid": 307269274710354,
+							"disabled": true,
+							"parameters": {
+								"offset-x": "Self.ImageOffsetX + OffsetSpeed * 60 * dt"
+							}
+						},
+						{
+							"id": "set-image-offset-y",
+							"objectClass": "Background_title_screen",
+							"sid": 479418889375406,
+							"parameters": {
+								"offset-y": "Self.ImageOffsetY + OffsetSpeed * 60 * dt"
+							}
+						}
+					],
+					"sid": 704378745582916
+				}
+			],
+			"sid": 951167196196991
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player Controls",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "player",
+							"sid": 387395099563791,
+							"behaviorType": "8Direction",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "player",
+							"sid": 875198802831807,
+							"parameters": {
+								"animation": "\"center\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 754741413514794
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "player",
+							"sid": 851222393462390,
+							"behaviorType": "8Direction"
+						}
+					],
+					"actions": [],
+					"sid": 469943734422677,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 436644202126012,
+									"parameters": {
+										"key": 37
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 344205547743436,
+									"parameters": {
+										"animation": "\"left\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 514851186488021
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 930280140162326,
+									"parameters": {
+										"key": 39
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 848164988045049,
+									"parameters": {
+										"animation": "\"right\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 376341914835070
+						}
+					]
+				}
+			],
+			"sid": 379421255471198
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 682593496846612,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 639101543421280,
+					"parameters": {
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "auto"
+					}
+				}
+			],
+			"sid": 486671919409855
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 666624288445835
+				},
+				{
+					"id": "is-tag-playing",
+					"objectClass": "Audio",
+					"sid": 206384034392535,
+					"parameters": {
+						"tag": "\"theme\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 751493880686795,
+					"parameters": {
+						"audio-file": "soundtrack",
+						"loop": "looping",
+						"volume": "-20",
+						"tag-optional": "\"theme\""
+					}
+				}
+			],
+			"sid": 447669903846315
+		}
+	],
+	"sid": 937162289713874
+}
