@@ -1,5 +1,5 @@
 {
-	"name": "gameplay",
+	"name": "egameplay",
 	"events": [
 		{
 			"eventType": "group",
@@ -208,9 +208,89 @@
 						"volume": "-20",
 						"tag-optional": "\"theme\""
 					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "obj_player_fire_effect",
+					"sid": 415365801312737,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "player",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "obj_asteroid",
+					"sid": 251547663400815,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "90"
+					}
 				}
 			],
 			"sid": 447669903846315
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Asteroid Creation System",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 938271050869663,
+							"parameters": {
+								"interval-seconds": "random(2,3)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 584763139900668,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 122434311517513,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 147233093703745,
+							"parameters": {
+								"animation": "choose(\"1\",\"2\")",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 747027167878845
+				}
+			],
+			"sid": 499391160272459
 		}
 	],
 	"sid": 937162289713874

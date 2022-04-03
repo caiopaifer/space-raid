@@ -56,8 +56,32 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -71,7 +95,9 @@
 			"obj_solid",
 			"Keyboard",
 			"Browser",
-			"Audio"
+			"Audio",
+			"obj_player_fire_effect",
+			"obj_asteroid"
 		],
 		"subfolders": []
 	},
@@ -90,7 +116,7 @@
 	},
 	"eventSheets": {
 		"items": [
-			"gameplay"
+			"egameplay"
 		],
 		"subfolders": []
 	},

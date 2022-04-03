@@ -1,0 +1,124 @@
+{
+	"name": "obj_asteroid",
+	"plugin-id": "Sprite",
+	"sid": 692945593646190,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 147026112644754
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "SineShake",
+			"sid": 905160570632133
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "SineZ",
+			"sid": 731847832568198
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 10,
+						"height": 10,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4898728,
+						"collisionPoly": {
+							"points": [
+								0.29531251173466444,
+								0.09374988928436778,
+								0.7015625644351076,
+								0.09218765625109882,
+								0.8984375722582172,
+								0.30937483983734637,
+								0.8999999197324087,
+								0.7124999122818281,
+								0.6984371264154561,
+								0.8984374578172947,
+								0.29375016426047296,
+								0.8953125339870667,
+								0.0937500037252903,
+								0.7140623749916699,
+								0.08671886788681604,
+								0.3117186475483038
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 811217625965872,
+				"name": "1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 15,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6854009,
+						"collisionPoly": {
+							"points": [
+								0.07604156796302712,
+								0.5019532641551194,
+								0.06145835872325778,
+								0.2513428385592631,
+								0.2625000054637595,
+								0.1247559030753731,
+								0.5979167313542654,
+								0.11572267872979936,
+								0.6031250040978196,
+								0.060546829722198936,
+								0.8083334274424491,
+								0.05859364503994158,
+								0.9369790624371795,
+								0.2558593354963996,
+								0.9374999975164732,
+								0.7578124665344745,
+								0.6645834415985515,
+								0.9433593608283743,
+								0.46041658323671675,
+								0.9404297089747473,
+								0.36875001465280866,
+								0.8208007939974777,
+								0.13437500533958288,
+								0.6799316934717368
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 808478848167662,
+				"name": "2",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
