@@ -527,9 +527,9 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 912286408515968,
+							"sid": 875310732142813,
 							"parameters": {
-								"seconds": "0.1"
+								"seconds": "1.5"
 							}
 						},
 						{
@@ -540,26 +540,6 @@
 								"object-to-create": "obj_asteroid",
 								"layer": "\"Enemies\"",
 								"x": "random(80,160)",
-								"y": "-60",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 390685341124387,
-							"parameters": {
-								"seconds": "0.1"
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 713052203406490,
-							"parameters": {
-								"object-to-create": "obj_asteroid",
-								"layer": "\"Enemies\"",
-								"x": "random(20,160)",
 								"y": "-60",
 								"create-hierarchy": false
 							}
@@ -607,6 +587,2618 @@
 						}
 					],
 					"sid": 550143068858371
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 631099204520627,
+							"parameters": {
+								"interval-seconds": "random(2,3)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 331608340875851,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 390186931829256,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 624451011748723,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 216409764713919,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 829951816703699,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 500334452398573,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 471950261480603
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 957018727309194
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 503983053704283,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 274828408949371,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 721523794331459,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 675377101239551,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "65"
+							}
+						}
+					],
+					"sid": 643911072687848
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 321547208486286,
+							"parameters": {
+								"interval-seconds": "random(1,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 900459877087398,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 106318757341994,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 514254735917922,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 134180973895249,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 297362668458816,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 515886554683461,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 257862968266662
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 988369059849506
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 110535820125398,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 636728116903028,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 480056317148768,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 463726369949867,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "65"
+							}
+						}
+					],
+					"sid": 667115361854293
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 563833316772496,
+							"parameters": {
+								"interval-seconds": "random(2,3)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 346650708395912,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 854344959207067,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 175521987815814,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 128132486284392,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 436632323972274
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 829038670692523
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 310673861543419,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 164016582874796,
+							"parameters": {
+								"animation": "choose(\"2\", \"3\", \"4\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 869534714213022,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 167318123087567,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "65"
+							}
+						}
+					],
+					"sid": 451970253656693
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 530383262341316,
+							"parameters": {
+								"interval-seconds": "random(2,3)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 642624571895297,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 357655697087205,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 613916583289166,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 626500310041757,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 582650892598299,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 952396286159995,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 370547821015848
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 238294979761713
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 647934920619092,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 219065132641748,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 455571012733471,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 353931477663880,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "80"
+							}
+						}
+					],
+					"sid": 832752198381603
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 296759983063573,
+							"parameters": {
+								"interval-seconds": "random(1,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 546945350920880,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "7"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 340067133522795,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 344485521208270,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 330414958472632,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 861956866110866,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 994350619528483,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 998022240370378
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 915264798375637
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 560295891535774,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "7"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 523876968982983,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 126386549550969,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 855637828591417,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "85"
+							}
+						}
+					],
+					"sid": 664236021590170
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 576860191734548,
+							"parameters": {
+								"interval-seconds": "random(2,3)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 813409668015724,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "8"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 943300094983542,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 647381142618538,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 929285742703663,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 718922188927653
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 997983039763808
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 438420337983146,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "8"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 236352806533131,
+							"parameters": {
+								"animation": "choose(\"2\", \"3\", \"4\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 182506093223595,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 251716207486180,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "90"
+							}
+						}
+					],
+					"sid": 541811946545554
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 561696044445078,
+							"parameters": {
+								"interval-seconds": "random(2,3)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 631200364134922,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "9"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 235147807091433,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 639175377495042,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 346059363898827,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 739614310215708,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 267013388426922,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 741829724712885
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 514823610593646
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 151233670588218,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "9"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 523749262587738,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 955457951207917,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 610145165738570,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "95"
+							}
+						}
+					],
+					"sid": 652379218977541
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 432547907513994,
+							"parameters": {
+								"interval-seconds": "random(1,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 412264551832288,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 343784805056734,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 632283926138117,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 379297726077199,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 885659428639996,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 257224641315097,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 755751564482543
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 581241613305916
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 941091354676901,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 930199264510395,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 500814897581436,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 416033087343853,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "100"
+							}
+						}
+					],
+					"sid": 685589923198713
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 125586066051152,
+							"parameters": {
+								"interval-seconds": "random(1,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 603294108452480,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "11"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 945424079661770,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 144552351621446,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 927548958197303,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 909698320592138
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 952386342369024
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 989846616690299,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "11"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 361918901946069,
+							"parameters": {
+								"animation": "choose(\"2\", \"3\", \"4\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 683825804235742,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 594207057925399,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "105"
+							}
+						}
+					],
+					"sid": 387390798992788
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 390380964883313,
+							"parameters": {
+								"interval-seconds": "random(2,3)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 910894575731836,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "12"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 678298313944395,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 797379960382881,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 292997045238716,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 609054650282145,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 238111443721050,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 308880745540521
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 915883805288330
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 370468001443771,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "12"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 214635663396748,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 107921093478042,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 993882185008074,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "110"
+							}
+						}
+					],
+					"sid": 509723130593033
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 131601657165236,
+							"parameters": {
+								"interval-seconds": "random(1,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 313720483454756,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "13"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 248505329675405,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 860800232784878,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 295680237296701,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 374411706684910,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 220763128809763,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 706310333283110
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 929336620151318
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 710334096020273,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "13"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 227324881072447,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 882633852195935,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 602590295903666,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "115"
+							}
+						}
+					],
+					"sid": 245227250008347
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 878081021008108,
+							"parameters": {
+								"interval-seconds": "random(1,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 383778710843680,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "14"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 324027358866838,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 953683793560156,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 426307706350853,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 272641817461720,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 720422472952613,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 990135419810837
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 718994173318409
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 158517233336525,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "14"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 783842354460892,
+							"parameters": {
+								"animation": "choose(\"2\", \"3\", \"4\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 765556113950343,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 842413398802985,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "120"
+							}
+						}
+					],
+					"sid": 289424862156775
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 336084417564327,
+							"parameters": {
+								"interval-seconds": "random(1,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 722322563232133,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "15"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 713586144732296,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 129958767068389,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 161438666756026,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 445384798989778,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 899582332056234,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 864920140818674
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 898108567651015
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 408439276443544,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "15"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 764203600754386,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 969601983891440,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 276433548600261,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "125"
+							}
+						}
+					],
+					"sid": 272509999340332
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 903601590573396,
+							"parameters": {
+								"interval-seconds": "random(1,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 669152683126806,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "16"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 632105404033407,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 871642320875637,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 495597694339754,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 406642111614439,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 282737997226806,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 618210556088642
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 672366669442483
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 164198445657952,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "16"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 967929667766297,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 713103150003227,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 653120780760247,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "130"
+							}
+						}
+					],
+					"sid": 414799107987921
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 902116152548464,
+							"parameters": {
+								"interval-seconds": "random(1,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 333301072283047,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "17"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 539834783658962,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 329758746025311,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 478670821900707,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 919416091428518,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 220072523805610,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 685965512449946
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 703708393461705
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 197497153158823,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "17"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 301995496174101,
+							"parameters": {
+								"animation": "choose(\"2\", \"3\", \"4\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 823619442713705,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 289212593383955,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "135"
+							}
+						}
+					],
+					"sid": 536868112476766
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 180337584002839,
+							"parameters": {
+								"interval-seconds": "random(1,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 380443914853797,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "18"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 222512961459902,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 496181117316603,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 936474566188012,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 165616861765562,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 547355661477884,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 806071408743159
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 149469075943201
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 257370818480991,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "18"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 268847685273455,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 777655921592621,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 389534772769319,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "140"
+							}
+						}
+					],
+					"sid": 708603783014017
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 859071683143680,
+							"parameters": {
+								"interval-seconds": "random(1,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 364257352551546,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "19"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 338454050607938,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 361663944637049,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 114751157204332,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 262875706319285,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 817498149258556,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 914930572885898
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 593845569500835
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 252050827709988,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "19"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 329255959510363,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 301896622119438,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 382102903976530,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "145"
+							}
+						}
+					],
+					"sid": 636693866921569
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 207326190039521,
+							"parameters": {
+								"interval-seconds": "random(2,3)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 683010292936059,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "20"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 138467747378350,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 712965151900110,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 789710324630324,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 169791211137855
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 630833272823727
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 701437056284282,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "20"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 813205259420216,
+							"parameters": {
+								"animation": "choose(\"2\", \"3\", \"4\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 394276961598443,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 396348653927397,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "150"
+							}
+						}
+					],
+					"sid": 712419896607406
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 158613425231152,
+							"parameters": {
+								"interval-seconds": "random(0,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 321958471457049,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "21"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 883783185663296,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 586938527995087,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 669239303859088,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 143844426362358,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 834534287687429,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 224089492584360,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						}
+					],
+					"sid": 833831128635187
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 103153590217975
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 221149995873668,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "21"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 412584135600592,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 270280863478651,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 629047720049902,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "160"
+							}
+						}
+					],
+					"sid": 318800343809416
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 667648622908967,
+							"parameters": {
+								"interval-seconds": "random(0,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 140273867769249,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 5,
+								"value": "22"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 864546792420836,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 114305599280732,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 189103512881527,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 292945832937894,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 667928360944445,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 464079722905387,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						}
+					],
+					"sid": 485658883795701
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 859333720806095
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 498616024892610,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 5,
+								"value": "22"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 179134205618069,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 198723141333808,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 290309244801621,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "170"
+							}
+						}
+					],
+					"sid": 505375154453454
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 529432172025772,
+							"parameters": {
+								"interval-seconds": "random(0,2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 179191141372234,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "23"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 530249054292949,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(20,80)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 846906076871895,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 227897526379196,
+							"parameters": {
+								"object-to-create": "obj_asteroid",
+								"layer": "\"Enemies\"",
+								"x": "random(80,160)",
+								"y": "-60",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 680060073518613,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						}
+					],
+					"sid": 530420080714716
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 769514030948159
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 538713934920477,
+							"parameters": {
+								"variable": "var_level",
+								"comparison": 0,
+								"value": "23"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 965642404749324,
+							"parameters": {
+								"animation": "choose(\"2\", \"3\", \"4\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 792054278315783,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "obj_asteroid",
+							"sid": 508142930598216,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "180"
+							}
+						}
+					],
+					"sid": 904835208183658
 				},
 				{
 					"eventType": "block",
