@@ -47,6 +47,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
@@ -58,6 +66,14 @@
 			"type": "behavior",
 			"id": "Pin",
 			"name": "Pin",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -97,7 +113,8 @@
 			"Browser",
 			"Audio",
 			"obj_player_fire_effect",
-			"obj_asteroid"
+			"obj_asteroid",
+			"txt_time"
 		],
 		"subfolders": []
 	},

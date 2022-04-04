@@ -2,6 +2,16 @@
 	"name": "egameplay",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "var_time",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 677022971181551
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Scrolling Background",
@@ -47,6 +57,14 @@
 							"sid": 479418889375406,
 							"parameters": {
 								"offset-y": "Self.ImageOffsetY + OffsetSpeed * 60 * dt"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "txt_time",
+							"sid": 628253017481344,
+							"parameters": {
+								"text": "\"Time: \" & var_time"
 							}
 						}
 					],
@@ -278,12 +296,20 @@
 							}
 						},
 						{
-							"id": "set-animation",
+							"id": "set-animation-frame",
 							"objectClass": "obj_asteroid",
-							"sid": 147233093703745,
+							"sid": 354218812382273,
 							"parameters": {
-								"animation": "choose(\"1\",\"2\")",
-								"from": "beginning"
+								"frame-number": "random(0,3)"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "obj_asteroid",
+							"sid": 437527845674004,
+							"parameters": {
+								"width": "Self.ImageWidth",
+								"height": "Self.ImageHeight"
 							}
 						}
 					],
@@ -291,6 +317,138 @@
 				}
 			],
 			"sid": 499391160272459
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "obj_asteroid",
+					"sid": 960181180258513,
+					"parameters": {
+						"object": "player"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "player",
+					"sid": 148728712521331
+				},
+				{
+					"id": "destroy",
+					"objectClass": "obj_asteroid",
+					"sid": 195984294149856
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 930128860715925,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 655431700414138,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 293125162237901
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 192217182764984,
+					"parameters": {
+						"variable": "var_time",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 241913096833344
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Starting Movement",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 746014182630218
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "player",
+							"sid": 943720811192208,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "Self.X",
+								"y": "Self.Y-120",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 653437187227115,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "player",
+							"sid": 966798652104578,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 391611324707312
+				}
+			],
+			"sid": 169334389175375
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 831898975203300,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 588961237614221,
+					"parameters": {
+						"variable": "var_time",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 130085507381720
 		}
 	],
 	"sid": 937162289713874

@@ -23,10 +23,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": -53,
-						"y": -27,
-						"width": 259,
-						"height": 374,
+						"x": -3.4222672585148217,
+						"y": -21.19172633654548,
+						"width": 187.01896613873072,
+						"height": 368.19172633654546,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -237,55 +237,31 @@
 								"directions": "dir-8",
 								"set-angle": "no",
 								"default-controls": true,
-								"enabled": true
+								"enabled": false
 							}
 						},
 						"Pin": {
 							"properties": {
 								"destroy": false
 							}
-						}
-					},
-					"world": {
-						"x": 66,
-						"y": 259,
-						"width": 20,
-						"height": 26,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "obj_player_fire_effect",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "3",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 15,
-					"instanceVariables": {},
-					"behaviors": {
-						"Pin": {
+						},
+						"MoveTo": {
 							"properties": {
-								"destroy": false
+								"max-speed": 120,
+								"acceleration": 6000,
+								"deceleration": 6000,
+								"rotate-speed": 0,
+								"set-angle": false,
+								"stop-on-solids": false,
+								"enabled": true
 							}
 						}
 					},
 					"world": {
-						"x": 66.0013199263379,
-						"y": 264.99002651775413,
-						"width": 8,
-						"height": 12,
+						"x": 80.7280755675265,
+						"y": 401.71752935380295,
+						"width": 20,
+						"height": 26,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -336,7 +312,7 @@
 					"type": "obj_asteroid",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "1",
+						"initial-animation": "types",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -403,6 +379,82 @@
 				}
 			],
 			"sid": 548732575638310,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "UI",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "txt_time",
+					"properties": {
+						"text": "Time: ",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 15,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 10.639120995369524,
+						"y": 4.63320386710474,
+						"width": 200,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 410843082152247,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
