@@ -101,6 +101,14 @@
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
 		}
 	],
 	"uniqueId": "6czwhqt1t7a",
@@ -114,7 +122,9 @@
 			"Audio",
 			"obj_player_fire_effect",
 			"obj_asteroid",
-			"txt_time"
+			"txt_time",
+			"obj_camera",
+			"obj_impact_explosion"
 		],
 		"subfolders": []
 	},
@@ -143,7 +153,13 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "Attack01.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 468998072037825
+				}
+			],
 			"subfolders": []
 		},
 		"music": {

@@ -23,10 +23,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": -3.4222672585148217,
-						"y": -21.19172633654548,
-						"width": 187.01896613873072,
-						"height": 368.19172633654546,
+						"x": -21.054529035771097,
+						"y": -33.84545480807086,
+						"width": 237.63391041129532,
+						"height": 410.71656348306703,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -42,7 +42,7 @@
 				{
 					"type": "obj_solid",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -78,7 +78,7 @@
 				{
 					"type": "obj_solid",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -114,7 +114,7 @@
 				{
 					"type": "obj_solid",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -150,7 +150,7 @@
 				{
 					"type": "obj_solid",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -171,6 +171,41 @@
 						"y": 147,
 						"width": 92,
 						"height": 393,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "obj_camera",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 21,
+					"instanceVariables": {},
+					"behaviors": {
+						"ScrollTo": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 90,
+						"y": 160,
+						"width": 90,
+						"height": 160,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -312,7 +347,7 @@
 					"type": "obj_asteroid",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "types",
+						"initial-animation": "1",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -365,6 +400,213 @@
 						"y": -64.65693512359948,
 						"width": 20,
 						"height": 20,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "obj_asteroid",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "2",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 18,
+					"instanceVariables": {},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 50,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"SineShake": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 1,
+								"magnitude-random": 1,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"SineZ": {
+							"properties": {
+								"movement": "size",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 0.2,
+								"magnitude-random": 1,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 268.5225989682597,
+						"y": -61.13048162865586,
+						"width": 30,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "obj_asteroid",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "3",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 19,
+					"instanceVariables": {},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 50,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"SineShake": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 1,
+								"magnitude-random": 1,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"SineZ": {
+							"properties": {
+								"movement": "size",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 0.2,
+								"magnitude-random": 1,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 297.3564961121764,
+						"y": -9.685800796675537,
+						"width": 44,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "obj_asteroid",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "4",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 20,
+					"instanceVariables": {},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 50,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"SineShake": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 1,
+								"magnitude-random": 1,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"SineZ": {
+							"properties": {
+								"movement": "size",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 0.2,
+								"magnitude-random": 1,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 300.46806993248845,
+						"y": 50.88616450765626,
+						"width": 98,
+						"height": 62,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -471,8 +713,8 @@
 				1
 			],
 			"isTransparent": true,
-			"parallaxX": 1,
-			"parallaxY": 1,
+			"parallaxX": 0,
+			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
@@ -486,8 +728,8 @@
 	"sid": 597303255700222,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 180,
-	"height": 320,
+	"width": 360,
+	"height": 640,
 	"unboundedScrolling": false,
 	"vpX": 0.5,
 	"vpY": 0.5,

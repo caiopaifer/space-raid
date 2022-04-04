@@ -294,26 +294,60 @@
 							"parameters": {
 								"angle": "90"
 							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "obj_asteroid",
-							"sid": 354218812382273,
-							"parameters": {
-								"frame-number": "random(0,3)"
-							}
-						},
-						{
-							"id": "set-size",
-							"objectClass": "obj_asteroid",
-							"sid": 437527845674004,
-							"parameters": {
-								"width": "Self.ImageWidth",
-								"height": "Self.ImageHeight"
-							}
 						}
 					],
 					"sid": 747027167878845
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "obj_asteroid",
+							"sid": 923457364642932
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "obj_asteroid",
+							"sid": 322963606075793,
+							"parameters": {
+								"animation": "choose(\"1\", \"2\", \"3\", \"4\")",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 585764306628882
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 645523966663275
+						}
+					],
+					"actions": [
+						{
+							"id": "set-width",
+							"objectClass": "obj_asteroid",
+							"sid": 884948274448109,
+							"parameters": {
+								"width": "Self.ImageWidth*2"
+							}
+						},
+						{
+							"id": "set-height",
+							"objectClass": "obj_asteroid",
+							"sid": 745779583431244,
+							"parameters": {
+								"height": "Self.ImageHeight*2"
+							}
+						}
+					],
+					"sid": 872659348719170
 				}
 			],
 			"sid": 499391160272459
@@ -332,9 +366,122 @@
 			],
 			"actions": [
 				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 270861531717120,
+					"parameters": {
+						"object-to-create": "obj_impact_explosion",
+						"layer": "\"Player\"",
+						"x": "player.X",
+						"y": "player.y",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 800591470015891,
+					"parameters": {
+						"audio-file": "Attack01",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"fx\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 275225182826927,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 673006892351241,
+					"parameters": {
+						"object-to-create": "obj_impact_explosion",
+						"layer": "\"Player\"",
+						"x": "player.X+1",
+						"y": "player.y-1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 272280166245847,
+					"parameters": {
+						"audio-file": "Attack01",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"fx\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 740796181538126,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "player",
+					"sid": 487415363413362,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 440773544512967,
+					"parameters": {
+						"object-to-create": "obj_impact_explosion",
+						"layer": "\"Player\"",
+						"x": "player.X",
+						"y": "player.y",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 392851377581008,
+					"parameters": {
+						"audio-file": "Attack01",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"fx\""
+					}
+				},
+				{
 					"id": "destroy",
 					"objectClass": "player",
-					"sid": 148728712521331
+					"sid": 418492115635721
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "obj_camera",
+					"sid": 390548810060898,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "obj_camera",
+					"sid": 245163333708313,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"magnitude": "40",
+						"duration": "0.6",
+						"mode": "reducing-magnitude"
+					}
 				},
 				{
 					"id": "destroy",
@@ -344,17 +491,9 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 930128860715925,
+					"sid": 615442610602883,
 					"parameters": {
-						"seconds": "0.5"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 655431700414138,
-					"parameters": {
-						"seconds": "0.5"
+						"seconds": "1"
 					}
 				},
 				{
