@@ -445,10 +445,10 @@
 						}
 					},
 					"world": {
-						"x": 86.60746361375357,
-						"y": 152.94255465758593,
-						"width": 199.91847894540072,
-						"height": 331.49280808402864,
+						"x": 90.88491951160384,
+						"y": 184.5405345582779,
+						"width": 314.4439379445106,
+						"height": 437.1873723586753,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -540,7 +540,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 7.028645917403367,
+						"x": 10.028645917403367,
 						"y": 120,
 						"width": 40.30968154863075,
 						"height": 32.60704796143074,
@@ -582,9 +582,9 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 7.05843822380168,
-						"y": 139.36382625363615,
-						"width": 200.7223093209061,
+						"x": 9.832825095298773,
+						"y": 137.86748232823433,
+						"width": 79.88428887293111,
 						"height": 32.60704796143074,
 						"originX": 0,
 						"originY": 0,
@@ -666,8 +666,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 99.5347098590013,
-						"y": 139.55099682359867,
+						"x": 99.3090967304984,
+						"y": 138.05465289819685,
 						"width": 90.89123736156654,
 						"height": 32.60704796143074,
 						"originX": 0,
@@ -708,8 +708,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 6.973986944690608,
-						"y": 158.11977620986016,
+						"x": 10.109358539770795,
+						"y": 156.26975971007167,
 						"width": 40.30968154863075,
 						"height": 32.60704796143074,
 						"originX": 0,
@@ -725,10 +725,10 @@
 					}
 				},
 				{
-					"type": "obj_pause_selector",
+					"type": "obj_selector",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "1",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -737,10 +737,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 153.46673583984375,
-						"y": 8.873432159423828,
-						"width": 250,
-						"height": 250,
+						"x": 3.4159903448924425,
+						"y": 145.86396277262102,
+						"width": 6,
+						"height": 40,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

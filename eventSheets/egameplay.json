@@ -32,6 +32,16 @@
 			"sid": 136216607406515
 		},
 		{
+			"eventType": "variable",
+			"name": "var_audio_volume",
+			"type": "number",
+			"initialValue": "60",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 999429331361170
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Scrolling Background",
@@ -85,6 +95,14 @@
 							"sid": 329143016221192,
 							"parameters": {
 								"text": "var_time"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "txt_paused_volume",
+							"sid": 216660389694016,
+							"parameters": {
+								"text": "var_audio_volume"
 							}
 						}
 					],
@@ -3621,59 +3639,437 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
+					"eventType": "group",
+					"disabled": false,
+					"title": "Features",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 262251258713922,
-							"parameters": {
-								"variable": "var_game_paused"
-							}
+							"eventType": "comment",
+							"text": "Audio Volume"
 						},
 						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 761416715852170
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "obj_selector",
+									"sid": 101672417450716,
+									"parameters": {
+										"comparison": 0,
+										"number": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 943226619731946,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 559560240103400,
+											"parameters": {
+												"variable": "var_audio_volume",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 386716779479568,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 124598492202679,
+													"parameters": {
+														"key": 65
+													}
+												},
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 193623128884747,
+													"parameters": {
+														"key": 37
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 383390262438194,
+													"parameters": {
+														"variable": "var_audio_volume",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 307756308142501,
+											"isOrBlock": true
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 262302142145306,
+											"parameters": {
+												"variable": "var_audio_volume",
+												"comparison": 2,
+												"value": "100"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 541877475030473,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 526622073284131,
+													"parameters": {
+														"key": 68
+													}
+												},
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 336620065231493,
+													"parameters": {
+														"key": 39
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 812868421722091,
+													"parameters": {
+														"variable": "var_audio_volume",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 455158075749732,
+											"isOrBlock": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Windows mode"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "obj_selector",
+									"sid": 162924629649589,
+									"parameters": {
+										"comparison": 0,
+										"number": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 522450862486022,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-fullscreen",
+											"objectClass": "Browser",
+											"sid": 386128830076102
+										}
+									],
+									"actions": [],
+									"sid": 421009674891946,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-key-pressed",
+													"objectClass": "Keyboard",
+													"sid": 690373667161839,
+													"parameters": {
+														"key": 32
+													}
+												},
+												{
+													"id": "on-key-pressed",
+													"objectClass": "Keyboard",
+													"sid": 562235784874126,
+													"parameters": {
+														"key": 13
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "cancel-fullscreen",
+													"objectClass": "Browser",
+													"sid": 749850583741329
+												}
+											],
+											"sid": 453944424768407,
+											"isOrBlock": true
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-fullscreen",
+											"objectClass": "Browser",
+											"sid": 448183317661752,
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 719341968881222,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-key-pressed",
+													"objectClass": "Keyboard",
+													"sid": 894977147968378,
+													"parameters": {
+														"key": 32
+													}
+												},
+												{
+													"id": "on-key-pressed",
+													"objectClass": "Keyboard",
+													"sid": 985043946983012,
+													"parameters": {
+														"key": 13
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "request-fullscreen",
+													"objectClass": "Browser",
+													"sid": 149841818359819,
+													"parameters": {
+														"mode": "stretch-letterbox-scale",
+														"navigation-ui": "auto"
+													}
+												}
+											],
+											"sid": 114711104566928,
+											"isOrBlock": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Quit"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "obj_selector",
+									"sid": 994808799475565,
+									"parameters": {
+										"comparison": 0,
+										"number": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 312578795216840,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 240523392143585,
+											"parameters": {
+												"key": 32
+											}
+										},
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 492873915916411,
+											"parameters": {
+												"key": 13
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "close",
+											"objectClass": "Browser",
+											"sid": 211491766073178
+										}
+									],
+									"sid": 156971954271148,
+									"isOrBlock": true
+								}
+							]
 						}
 					],
-					"actions": [
+					"sid": 570224357346208
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "System",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 887465606099678,
-							"parameters": {
-								"layer": "\"Pause\"",
-								"visibility": "visible"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 965157108551736,
+									"parameters": {
+										"variable": "var_game_paused"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 923451848412250
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 171031779975914,
+									"parameters": {
+										"layer": "\"Pause\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "obj_black_fade_pause",
+									"sid": 221871026857495,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 436994228744717,
+									"parameters": {
+										"object": "obj_black_fade_pause",
+										"time-scale": "1.0"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 253111051187208,
+									"parameters": {
+										"time-scale": "0"
+									}
+								}
+							],
+							"sid": 538450364474916
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "obj_black_fade_pause",
-							"sid": 414314073908516,
-							"parameters": {
-								"visibility": "visible"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 377797402496082,
+									"parameters": {
+										"variable": "var_game_paused"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 708786135983476
+								}
+							],
+							"actions": [
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 662895149075965,
+									"parameters": {
+										"time-scale": "1"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 713848726159510,
+									"parameters": {
+										"layer": "\"Pause\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 618495348783913
 						},
 						{
-							"id": "set-object-time-scale",
-							"objectClass": "System",
-							"sid": 416045505283963,
-							"parameters": {
-								"object": "obj_black_fade_pause",
-								"time-scale": "1.0"
-							}
-						},
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 862750078488445,
-							"parameters": {
-								"time-scale": "0"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 596282581717974,
+									"parameters": {
+										"key": 80
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "toggle-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 478355072186224,
+									"parameters": {
+										"variable": "var_game_paused"
+									}
+								}
+							],
+							"sid": 922167369558124
 						}
 					],
-					"sid": 323430456503335
+					"sid": 353425581553546
 				},
 				{
 					"eventType": "block",
@@ -3681,62 +4077,92 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 198263070690157,
-							"parameters": {
-								"variable": "var_game_paused"
-							},
-							"isInverted": true
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 779193776031614
-						}
-					],
-					"actions": [
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 482968078784883,
-							"parameters": {
-								"time-scale": "1"
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 586663067745633,
-							"parameters": {
-								"layer": "\"Pause\"",
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 632766832040885
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 715591699031117,
-							"parameters": {
-								"key": 80
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "toggle-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 607393301920203,
+							"sid": 527248300211072,
 							"parameters": {
 								"variable": "var_game_paused"
 							}
 						}
 					],
-					"sid": 868538017013640
+					"actions": [],
+					"sid": 679518192592553,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Controls",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 578550070353102,
+											"parameters": {
+												"key": 83
+											}
+										},
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 443826106487436,
+											"parameters": {
+												"key": 40
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "obj_selector",
+											"sid": 207727270593956,
+											"parameters": {
+												"frame-number": "obj_selector.AnimationFrame+1"
+											}
+										}
+									],
+									"sid": 322310864801036,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 665557666427220,
+											"parameters": {
+												"key": 87
+											}
+										},
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 146858328912585,
+											"parameters": {
+												"key": 38
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "obj_selector",
+											"sid": 972566500001367,
+											"parameters": {
+												"frame-number": "obj_selector.AnimationFrame-1"
+											}
+										}
+									],
+									"sid": 699520110862268,
+									"isOrBlock": true
+								}
+							],
+							"sid": 845269564280830
+						}
+					]
 				}
 			],
 			"sid": 509677731015461

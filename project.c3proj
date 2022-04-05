@@ -149,8 +149,7 @@
 			"txt_paused_features",
 			"txt_paused_volume",
 			"txt_paused_fullscreen",
-			"obj_selector",
-			"obj_pause_selector"
+			"obj_selector"
 		],
 		"subfolders": []
 	},
