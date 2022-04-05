@@ -33,13 +33,23 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "var_audio_volume",
+			"name": "var_audio_volume_show",
 			"type": "number",
-			"initialValue": "60",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 999429331361170
+		},
+		{
+			"eventType": "variable",
+			"name": "var_audio_master_volume",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 714063691814190
 		},
 		{
 			"eventType": "group",
@@ -95,14 +105,6 @@
 							"sid": 329143016221192,
 							"parameters": {
 								"text": "var_time"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "txt_paused_volume",
-							"sid": 216660389694016,
-							"parameters": {
-								"text": "var_audio_volume"
 							}
 						}
 					],
@@ -257,11 +259,11 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 751493880686795,
+					"sid": 185271159098241,
 					"parameters": {
 						"audio-file": "soundtrack",
 						"loop": "looping",
-						"volume": "-20",
+						"volume": "var_audio_volume_show",
 						"tag-optional": "\"theme\""
 					}
 				},
@@ -3313,11 +3315,11 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 800591470015891,
+					"sid": 971429607026448,
 					"parameters": {
 						"audio-file": "Attack01",
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "var_audio_volume_show+10",
 						"tag-optional": "\"fx\""
 					}
 				},
@@ -3344,11 +3346,11 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 272280166245847,
+					"sid": 699320236877585,
 					"parameters": {
 						"audio-file": "Attack01",
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "var_audio_volume_show+10",
 						"tag-optional": "\"fx\""
 					}
 				},
@@ -3383,11 +3385,11 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 392851377581008,
+					"sid": 300331058410324,
 					"parameters": {
 						"audio-file": "Attack01",
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "var_audio_volume_show+10",
 						"tag-optional": "\"fx\""
 					}
 				},
@@ -3639,309 +3641,355 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Features",
-					"description": "",
-					"isActiveOnStart": true,
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 469122435769424,
+							"parameters": {
+								"variable": "var_game_paused"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 125607807918508,
 					"children": [
 						{
-							"eventType": "comment",
-							"text": "Audio Volume"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "obj_selector",
-									"sid": 101672417450716,
-									"parameters": {
-										"comparison": 0,
-										"number": "0"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 943226619731946,
+							"eventType": "group",
+							"disabled": false,
+							"title": "Features",
+							"description": "",
+							"isActiveOnStart": true,
 							"children": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 559560240103400,
-											"parameters": {
-												"variable": "var_audio_volume",
-												"comparison": 4,
-												"value": "0"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 386716779479568,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "key-is-down",
-													"objectClass": "Keyboard",
-													"sid": 124598492202679,
-													"parameters": {
-														"key": 65
-													}
-												},
-												{
-													"id": "key-is-down",
-													"objectClass": "Keyboard",
-													"sid": 193623128884747,
-													"parameters": {
-														"key": 37
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "subtract-from-eventvar",
-													"objectClass": "System",
-													"sid": 383390262438194,
-													"parameters": {
-														"variable": "var_audio_volume",
-														"value": "1"
-													}
-												}
-											],
-											"sid": 307756308142501,
-											"isOrBlock": true
-										}
-									]
+									"eventType": "comment",
+									"text": "Audio Volume"
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 262302142145306,
+											"id": "compare-animation-frame",
+											"objectClass": "obj_selector",
+											"sid": 854091621962252,
 											"parameters": {
-												"variable": "var_audio_volume",
-												"comparison": 2,
-												"value": "100"
+												"comparison": 0,
+												"number": "0"
 											}
 										}
 									],
 									"actions": [],
-									"sid": 541877475030473,
+									"sid": 337943296511880,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "key-is-down",
-													"objectClass": "Keyboard",
-													"sid": 526622073284131,
-													"parameters": {
-														"key": 68
-													}
-												},
-												{
-													"id": "key-is-down",
-													"objectClass": "Keyboard",
-													"sid": 336620065231493,
-													"parameters": {
-														"key": 39
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "add-to-eventvar",
+													"id": "compare-eventvar",
 													"objectClass": "System",
-													"sid": 812868421722091,
+													"sid": 142393298952994,
 													"parameters": {
-														"variable": "var_audio_volume",
-														"value": "1"
+														"variable": "var_audio_volume_show",
+														"comparison": 4,
+														"value": "-50"
 													}
 												}
 											],
-											"sid": 455158075749732,
-											"isOrBlock": true
-										}
-									]
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Windows mode"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "obj_selector",
-									"sid": 162924629649589,
-									"parameters": {
-										"comparison": 0,
-										"number": "1"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 522450862486022,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-fullscreen",
-											"objectClass": "Browser",
-											"sid": 386128830076102
-										}
-									],
-									"actions": [],
-									"sid": 421009674891946,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
+											"actions": [],
+											"sid": 251120152640222,
+											"children": [
 												{
-													"id": "on-key-pressed",
-													"objectClass": "Keyboard",
-													"sid": 690373667161839,
-													"parameters": {
-														"key": 32
-													}
-												},
-												{
-													"id": "on-key-pressed",
-													"objectClass": "Keyboard",
-													"sid": 562235784874126,
-													"parameters": {
-														"key": 13
-													}
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 678864831044778,
+															"parameters": {
+																"key": 65
+															}
+														},
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 870960199253529,
+															"parameters": {
+																"key": 37
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "subtract-from-eventvar",
+															"objectClass": "System",
+															"sid": 900514524676774,
+															"parameters": {
+																"variable": "var_audio_volume_show",
+																"value": "1"
+															}
+														}
+													],
+													"sid": 838695816134555,
+													"isOrBlock": true
 												}
-											],
-											"actions": [
-												{
-													"id": "cancel-fullscreen",
-													"objectClass": "Browser",
-													"sid": 749850583741329
-												}
-											],
-											"sid": 453944424768407,
-											"isOrBlock": true
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-fullscreen",
-											"objectClass": "Browser",
-											"sid": 448183317661752,
-											"isInverted": true
-										}
-									],
-									"actions": [],
-									"sid": 719341968881222,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "on-key-pressed",
-													"objectClass": "Keyboard",
-													"sid": 894977147968378,
-													"parameters": {
-														"key": 32
-													}
-												},
-												{
-													"id": "on-key-pressed",
-													"objectClass": "Keyboard",
-													"sid": 985043946983012,
-													"parameters": {
-														"key": 13
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "request-fullscreen",
-													"objectClass": "Browser",
-													"sid": 149841818359819,
-													"parameters": {
-														"mode": "stretch-letterbox-scale",
-														"navigation-ui": "auto"
-													}
-												}
-											],
-											"sid": 114711104566928,
-											"isOrBlock": true
-										}
-									]
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Quit"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "obj_selector",
-									"sid": 994808799475565,
-									"parameters": {
-										"comparison": 0,
-										"number": "2"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 312578795216840,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 240523392143585,
-											"parameters": {
-												"key": 32
-											}
+											]
 										},
 										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 492873915916411,
-											"parameters": {
-												"key": 13
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 248814080880933,
+													"parameters": {
+														"variable": "var_audio_volume_show",
+														"comparison": 2,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 775904383582740,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 325539504354814,
+															"parameters": {
+																"key": 68
+															}
+														},
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 410351288555909,
+															"parameters": {
+																"key": 39
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "add-to-eventvar",
+															"objectClass": "System",
+															"sid": 914101030894769,
+															"parameters": {
+																"variable": "var_audio_volume_show",
+																"value": "1"
+															}
+														}
+													],
+													"sid": 856849066762262,
+													"isOrBlock": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 749726528061667
 										}
 									],
 									"actions": [
 										{
-											"id": "close",
-											"objectClass": "Browser",
-											"sid": 211491766073178
+											"id": "set-master-volume",
+											"objectClass": "Audio",
+											"sid": 812810748504074,
+											"parameters": {
+												"db": "var_audio_volume_show"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "txt_paused_volume",
+											"sid": 714534156290900,
+											"parameters": {
+												"text": "var_audio_volume_show*2+100"
+											}
 										}
 									],
-									"sid": 156971954271148,
-									"isOrBlock": true
+									"sid": 617508755236013
+								},
+								{
+									"eventType": "comment",
+									"text": "Windows mode"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "obj_selector",
+											"sid": 187530307298955,
+											"parameters": {
+												"comparison": 0,
+												"number": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 876379803285741,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-fullscreen",
+													"objectClass": "Browser",
+													"sid": 516380063984107
+												}
+											],
+											"actions": [],
+											"sid": 536575361469563,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "on-key-pressed",
+															"objectClass": "Keyboard",
+															"sid": 548769097508660,
+															"parameters": {
+																"key": 32
+															}
+														},
+														{
+															"id": "on-key-pressed",
+															"objectClass": "Keyboard",
+															"sid": 650436775108837,
+															"parameters": {
+																"key": 13
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "cancel-fullscreen",
+															"objectClass": "Browser",
+															"sid": 395484840412712
+														}
+													],
+													"sid": 673478436709943,
+													"isOrBlock": true
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-fullscreen",
+													"objectClass": "Browser",
+													"sid": 982360303453507,
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 254780108803882,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "on-key-pressed",
+															"objectClass": "Keyboard",
+															"sid": 306655157880719,
+															"parameters": {
+																"key": 32
+															}
+														},
+														{
+															"id": "on-key-pressed",
+															"objectClass": "Keyboard",
+															"sid": 650650094156567,
+															"parameters": {
+																"key": 13
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "request-fullscreen",
+															"objectClass": "Browser",
+															"sid": 861161304765311,
+															"parameters": {
+																"mode": "stretch-letterbox-scale",
+																"navigation-ui": "auto"
+															}
+														}
+													],
+													"sid": 559769620078118,
+													"isOrBlock": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "Quit"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "obj_selector",
+											"sid": 238730176735884,
+											"parameters": {
+												"comparison": 0,
+												"number": "2"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 117626074379616,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-key-pressed",
+													"objectClass": "Keyboard",
+													"sid": 735732652826937,
+													"parameters": {
+														"key": 32
+													}
+												},
+												{
+													"id": "on-key-pressed",
+													"objectClass": "Keyboard",
+													"sid": 345568229519123,
+													"parameters": {
+														"key": 13
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "close",
+													"objectClass": "Browser",
+													"sid": 682663613299759
+												}
+											],
+											"sid": 728877868047653,
+											"isOrBlock": true
+										}
+									]
 								}
-							]
+							],
+							"sid": 582155236253243
 						}
-					],
-					"sid": 570224357346208
+					]
 				},
 				{
 					"eventType": "group",

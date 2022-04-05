@@ -374,7 +374,7 @@
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 0,
-								"magnitude": 1,
+								"magnitude": 2,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -443,7 +443,7 @@
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 0,
-								"magnitude": 1,
+								"magnitude": 3,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false
@@ -512,7 +512,7 @@
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 0,
-								"magnitude": 1,
+								"magnitude": 4,
 								"magnitude-random": 1,
 								"enabled": true,
 								"live-preview": false

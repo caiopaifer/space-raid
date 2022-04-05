@@ -485,18 +485,7 @@
 					},
 					"uid": 33,
 					"instanceVariables": {},
-					"behaviors": {
-						"Fade": {
-							"properties": {
-								"fade-in-time": 0.3,
-								"wait-time": 0,
-								"fade-out-time": 0,
-								"destroy": false,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
+					"behaviors": {},
 					"world": {
 						"x": -0.3004144873431187,
 						"y": 55.642296110280654,
