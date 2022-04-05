@@ -144,7 +144,13 @@
 			"obj_black_fade",
 			"txt_press_start",
 			"txt_title",
-			"obj_clock"
+			"obj_clock",
+			"obj_black_fade_pause",
+			"txt_paused_features",
+			"txt_paused_volume",
+			"txt_paused_fullscreen",
+			"obj_selector",
+			"obj_pause_selector"
 		],
 		"subfolders": []
 	},

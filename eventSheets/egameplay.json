@@ -22,6 +22,16 @@
 			"sid": 154142169911234
 		},
 		{
+			"eventType": "variable",
+			"name": "var_game_paused",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "true pause false unpaused",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 136216607406515
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Scrolling Background",
@@ -3602,6 +3612,134 @@
 				}
 			],
 			"sid": 752453172821854
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Pause System",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 262251258713922,
+							"parameters": {
+								"variable": "var_game_paused"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 761416715852170
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 887465606099678,
+							"parameters": {
+								"layer": "\"Pause\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "obj_black_fade_pause",
+							"sid": 414314073908516,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 416045505283963,
+							"parameters": {
+								"object": "obj_black_fade_pause",
+								"time-scale": "1.0"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 862750078488445,
+							"parameters": {
+								"time-scale": "0"
+							}
+						}
+					],
+					"sid": 323430456503335
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 198263070690157,
+							"parameters": {
+								"variable": "var_game_paused"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 779193776031614
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 482968078784883,
+							"parameters": {
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 586663067745633,
+							"parameters": {
+								"layer": "\"Pause\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 632766832040885
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 715591699031117,
+							"parameters": {
+								"key": 80
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "toggle-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 607393301920203,
+							"parameters": {
+								"variable": "var_game_paused"
+							}
+						}
+					],
+					"sid": 868538017013640
+				}
+			],
+			"sid": 509677731015461
 		}
 	],
 	"sid": 937162289713874
