@@ -117,6 +117,14 @@
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
 		}
 	],
 	"uniqueId": "6czwhqt1t7a",
@@ -133,7 +141,9 @@
 			"txt_time",
 			"obj_camera",
 			"obj_impact_explosion",
-			"obj_black_fade"
+			"obj_black_fade",
+			"txt_press_start",
+			"txt_title"
 		],
 		"subfolders": []
 	},
@@ -146,13 +156,15 @@
 	"layouts": {
 		"items": [
 			"gameplay",
-			"objects-repository"
+			"objects-repository",
+			"start"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"egameplay"
+			"egameplay",
+			"Estart"
 		],
 		"subfolders": []
 	},

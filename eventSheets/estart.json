@@ -1,0 +1,191 @@
+{
+	"name": "Estart",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Intro - Scrolling Background",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "OffsetSpeed",
+					"type": "number",
+					"initialValue": "3",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 723356691572930
+				},
+				{
+					"eventType": "comment",
+					"text": "Constantly offset the background to create an environment that feels more \"alive\"."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 339339051638866
+						}
+					],
+					"actions": [
+						{
+							"id": "set-image-offset-x",
+							"objectClass": "Background_title_screen",
+							"sid": 273514301694192,
+							"disabled": true,
+							"parameters": {
+								"offset-x": "Self.ImageOffsetX + OffsetSpeed * 60 * dt"
+							}
+						},
+						{
+							"id": "set-image-offset-y",
+							"objectClass": "Background_title_screen",
+							"sid": 127798010826509,
+							"parameters": {
+								"offset-y": "Self.ImageOffsetY + OffsetSpeed * 60 * dt"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "txt_time",
+							"sid": 721788924100372,
+							"parameters": {
+								"text": "\"Time: \" & var_time"
+							}
+						}
+					],
+					"sid": 963949890264139
+				}
+			],
+			"sid": 513116782246138
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 105642787324185
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "fade-out",
+					"sid": 876429977856078
+				},
+				{
+					"id": "flash",
+					"objectClass": "txt_press_start",
+					"sid": 141469729770133,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.3",
+						"off-time": "0.3",
+						"duration": "99999"
+					}
+				}
+			],
+			"sid": 537806186655201
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 611946243616323
+				},
+				{
+					"id": "is-tag-playing",
+					"objectClass": "Audio",
+					"sid": 808968230676740,
+					"parameters": {
+						"tag": "\"theme\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 260542561248887,
+					"parameters": {
+						"audio-file": "soundtrack",
+						"loop": "looping",
+						"volume": "-20",
+						"tag-optional": "\"theme\""
+					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "obj_player_fire_effect",
+					"sid": 602533767378752,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "player",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "obj_asteroid",
+					"sid": 479641456213552,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "90"
+					}
+				}
+			],
+			"sid": 170392083598098
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 379148399274517
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "txt_press_start",
+					"sid": 410386359395200
+				},
+				{
+					"callFunction": "fade-in",
+					"sid": 190533917850396
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 910784469567696,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 636061706037567,
+					"parameters": {
+						"layout": "gameplay"
+					}
+				}
+			],
+			"sid": 428170505016054
+		}
+	],
+	"sid": 214408389839914
+}
