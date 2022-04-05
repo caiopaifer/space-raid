@@ -72,9 +72,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "txt_time",
-							"sid": 628253017481344,
+							"sid": 329143016221192,
 							"parameters": {
-								"text": "\"Time: \" & var_time"
+								"text": "var_time"
 							}
 						}
 					],

@@ -656,10 +656,10 @@
 				{
 					"type": "txt_time",
 					"properties": {
-						"text": "Time: ",
+						"text": "00",
 						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 12,
+						"font": "Minecraftia-Regular",
+						"size": 10,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
@@ -670,7 +670,7 @@
 							1
 						],
 						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
+						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
 						"origin": "top-left"
@@ -679,12 +679,41 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 10.639120995369524,
-						"y": 4.63320386710474,
-						"width": 200,
-						"height": 30,
+						"x": 25.93655195793594,
+						"y": 7.132573351390398,
+						"width": 200.7223093209061,
+						"height": 32.60704796143074,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "obj_clock",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 31,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 12.340613613295492,
+						"y": 13.871940216260846,
+						"width": 17,
+						"height": 17,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

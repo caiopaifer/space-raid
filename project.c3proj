@@ -143,7 +143,8 @@
 			"obj_impact_explosion",
 			"obj_black_fade",
 			"txt_press_start",
-			"txt_title"
+			"txt_title",
+			"obj_clock"
 		],
 		"subfolders": []
 	},
@@ -198,7 +199,28 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "8-bit Arcade In.ttf",
+					"type": "application/font-sfnt",
+					"sid": 963477743001391
+				},
+				{
+					"name": "8-bit Arcade Out.ttf",
+					"type": "application/font-sfnt",
+					"sid": 314232968519038
+				},
+				{
+					"name": "BMarmy.TTF",
+					"type": "application/font-sfnt",
+					"sid": 171486071117194
+				},
+				{
+					"name": "Minecraftia-Regular.ttf",
+					"type": "application/font-sfnt",
+					"sid": 837239781548970
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {
@@ -285,12 +307,12 @@
 		"authorEmail": "",
 		"authorWebsite": "",
 		"appId": "",
-		"pixelRounding": true,
+		"pixelRounding": false,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-integer-scale",
-		"fullscreenQuality": "low",
+		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
 			0,
