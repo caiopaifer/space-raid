@@ -55,6 +55,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
@@ -149,7 +157,10 @@
 			"txt_paused_features",
 			"txt_paused_volume",
 			"txt_paused_fullscreen",
-			"obj_selector"
+			"obj_selector",
+			"LocalStorage",
+			"txt_last_score",
+			"txt_time_record"
 		],
 		"subfolders": []
 	},

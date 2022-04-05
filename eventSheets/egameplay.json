@@ -33,6 +33,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "var_player_death",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 693572387131504
+		},
+		{
+			"eventType": "variable",
 			"name": "var_audio_volume_show",
 			"type": "number",
 			"initialValue": "0",
@@ -43,13 +53,23 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "var_audio_master_volume",
+			"name": "var_time_record",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 714063691814190
+			"sid": 427988206704468
+		},
+		{
+			"eventType": "variable",
+			"name": "var_time_last_score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 723574557916366
 		},
 		{
 			"eventType": "group",
@@ -120,6 +140,174 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "obj_asteroid",
+							"sid": 262667983442890,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 769720074732296,
+							"parameters": {
+								"object-to-create": "obj_impact_explosion",
+								"layer": "\"Player\"",
+								"x": "player.X",
+								"y": "player.y",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 709308504550474,
+							"parameters": {
+								"audio-file": "Attack01",
+								"loop": "not-looping",
+								"volume": "var_audio_volume_show-6",
+								"tag-optional": "\"fx\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 364541777693362,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 463494995627482,
+							"parameters": {
+								"object-to-create": "obj_impact_explosion",
+								"layer": "\"Player\"",
+								"x": "player.X+1",
+								"y": "player.y-1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 894857651885501,
+							"parameters": {
+								"audio-file": "Attack01",
+								"loop": "not-looping",
+								"volume": "var_audio_volume_show-6",
+								"tag-optional": "\"fx\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 639180774239084,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "player",
+							"sid": 495428270991414,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 526359710653187,
+							"parameters": {
+								"object-to-create": "obj_impact_explosion",
+								"layer": "\"Player\"",
+								"x": "player.X",
+								"y": "player.y",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 826309213012447,
+							"parameters": {
+								"audio-file": "Attack01",
+								"loop": "not-looping",
+								"volume": "var_audio_volume_show-6",
+								"tag-optional": "\"fx\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "player",
+							"sid": 379080132883657
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "obj_camera",
+							"sid": 603871069187468,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "obj_camera",
+							"sid": 169878795818233,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "40",
+								"duration": "0.6",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "obj_asteroid",
+							"sid": 956201119043075
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 765773283078757,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"callFunction": "fade-in",
+							"sid": 681742895387732
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 849338540373333,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 842411503085311,
+							"parameters": {
+								"variable": "var_player_death",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 737469257181392
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -213,91 +401,9 @@
 			"sid": 379421255471198
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 682593496846612,
-					"parameters": {
-						"key": 70
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "request-fullscreen",
-					"objectClass": "Browser",
-					"sid": 639101543421280,
-					"parameters": {
-						"mode": "stretch-letterbox-scale",
-						"navigation-ui": "auto"
-					}
-				}
-			],
-			"sid": 486671919409855
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 666624288445835
-				},
-				{
-					"id": "is-tag-playing",
-					"objectClass": "Audio",
-					"sid": 206384034392535,
-					"parameters": {
-						"tag": "\"theme\""
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 185271159098241,
-					"parameters": {
-						"audio-file": "soundtrack",
-						"loop": "looping",
-						"volume": "var_audio_volume_show",
-						"tag-optional": "\"theme\""
-					}
-				},
-				{
-					"id": "pin-to-object-properties",
-					"objectClass": "obj_player_fire_effect",
-					"sid": 415365801312737,
-					"behaviorType": "Pin",
-					"parameters": {
-						"pin-to": "player",
-						"x": true,
-						"y": true,
-						"angle": false,
-						"width-type": "no",
-						"height-type": "no",
-						"z": false
-					}
-				},
-				{
-					"id": "set-angle-of-motion",
-					"objectClass": "obj_asteroid",
-					"sid": 251547663400815,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"angle": "90"
-					}
-				}
-			],
-			"sid": 447669903846315
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Asteroid Creation System",
+			"title": "Asteroid Creation System - Difficulty Progression",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -3288,188 +3394,6 @@
 			"sid": 499391160272459
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "obj_asteroid",
-					"sid": 960181180258513,
-					"parameters": {
-						"object": "player"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 270861531717120,
-					"parameters": {
-						"object-to-create": "obj_impact_explosion",
-						"layer": "\"Player\"",
-						"x": "player.X",
-						"y": "player.y",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 971429607026448,
-					"parameters": {
-						"audio-file": "Attack01",
-						"loop": "not-looping",
-						"volume": "var_audio_volume_show+10",
-						"tag-optional": "\"fx\""
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 275225182826927,
-					"parameters": {
-						"seconds": "0.1"
-					}
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 673006892351241,
-					"parameters": {
-						"object-to-create": "obj_impact_explosion",
-						"layer": "\"Player\"",
-						"x": "player.X+1",
-						"y": "player.y-1",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 699320236877585,
-					"parameters": {
-						"audio-file": "Attack01",
-						"loop": "not-looping",
-						"volume": "var_audio_volume_show+10",
-						"tag-optional": "\"fx\""
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 740796181538126,
-					"parameters": {
-						"seconds": "0.1"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "player",
-					"sid": 487415363413362,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 440773544512967,
-					"parameters": {
-						"object-to-create": "obj_impact_explosion",
-						"layer": "\"Player\"",
-						"x": "player.X",
-						"y": "player.y",
-						"create-hierarchy": false
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 300331058410324,
-					"parameters": {
-						"audio-file": "Attack01",
-						"loop": "not-looping",
-						"volume": "var_audio_volume_show+10",
-						"tag-optional": "\"fx\""
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "player",
-					"sid": 418492115635721
-				},
-				{
-					"id": "set-enabled",
-					"objectClass": "obj_camera",
-					"sid": 390548810060898,
-					"behaviorType": "ScrollTo",
-					"parameters": {
-						"state": "enabled"
-					}
-				},
-				{
-					"id": "shake",
-					"objectClass": "obj_camera",
-					"sid": 245163333708313,
-					"behaviorType": "ScrollTo",
-					"parameters": {
-						"magnitude": "40",
-						"duration": "0.6",
-						"mode": "reducing-magnitude"
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "obj_asteroid",
-					"sid": 195984294149856
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 926679621535007,
-					"parameters": {
-						"seconds": "1"
-					}
-				},
-				{
-					"callFunction": "fade-in",
-					"sid": 371450235177672
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 439621897510138,
-					"parameters": {
-						"seconds": "1"
-					}
-				},
-				{
-					"id": "restart-layout",
-					"objectClass": "System",
-					"sid": 293125162237901
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 192217182764984,
-					"parameters": {
-						"variable": "var_time",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 499847215758827,
-					"parameters": {
-						"variable": "var_level",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 241913096833344
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Starting Movement",
@@ -3531,107 +3455,6 @@
 				}
 			],
 			"sid": 169334389175375
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 831898975203300,
-					"parameters": {
-						"interval-seconds": "1.0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 588961237614221,
-					"parameters": {
-						"variable": "var_time",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 130085507381720
-		},
-		{
-			"functionName": "fade-in",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "obj_black_fade",
-					"sid": 438794726902116,
-					"parameters": {
-						"instance-variable": "option",
-						"comparison": 0,
-						"value": "\"in\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "start-fade",
-					"objectClass": "obj_black_fade",
-					"sid": 325372556205428,
-					"behaviorType": "Fade"
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "obj_black_fade",
-					"sid": 446174797436946,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 759716389521145
-		},
-		{
-			"functionName": "fade-out",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "obj_black_fade",
-					"sid": 536015385271810,
-					"parameters": {
-						"instance-variable": "option",
-						"comparison": 0,
-						"value": "\"out\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "start-fade",
-					"objectClass": "obj_black_fade",
-					"sid": 150710842801086,
-					"behaviorType": "Fade"
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "obj_black_fade",
-					"sid": 248971724552294,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 752453172821854
 		},
 		{
 			"eventType": "group",
@@ -4102,19 +3925,46 @@
 									"parameters": {
 										"key": 80
 									}
-								}
-							],
-							"actions": [
+								},
 								{
-									"id": "toggle-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 478355072186224,
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 293063920123317,
 									"parameters": {
-										"variable": "var_game_paused"
+										"key": 27
 									}
 								}
 							],
-							"sid": 922167369558124
+							"actions": [],
+							"sid": 922167369558124,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 536282618602449,
+											"parameters": {
+												"variable": "var_player_death"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "toggle-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 562401578514736,
+											"parameters": {
+												"variable": "var_game_paused"
+											}
+										}
+									],
+									"sid": 724440713651222
+								}
+							],
+							"isOrBlock": true
 						}
 					],
 					"sid": 353425581553546
@@ -4214,6 +4064,466 @@
 				}
 			],
 			"sid": 509677731015461
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Smaller Systems",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 584962462627384,
+							"parameters": {
+								"interval-seconds": "1.0"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 634693904115487,
+							"parameters": {
+								"variable": "var_player_death"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 367669287935957,
+							"parameters": {
+								"variable": "var_time",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 679143643141142
+				},
+				{
+					"eventType": "comment",
+					"text": "Fade in and out functions"
+				},
+				{
+					"functionName": "fade-in",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "obj_black_fade",
+							"sid": 789617255425213,
+							"parameters": {
+								"instance-variable": "option",
+								"comparison": 0,
+								"value": "\"in\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-fade",
+							"objectClass": "obj_black_fade",
+							"sid": 192071975960661,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "obj_black_fade",
+							"sid": 782428693242245,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 867278654960390
+				},
+				{
+					"functionName": "fade-out",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "obj_black_fade",
+							"sid": 337973905507038,
+							"parameters": {
+								"instance-variable": "option",
+								"comparison": 0,
+								"value": "\"out\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-fade",
+							"objectClass": "obj_black_fade",
+							"sid": 421373966831455,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "obj_black_fade",
+							"sid": 740224206491827,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 470532636350651
+				},
+				{
+					"eventType": "comment",
+					"text": "Inicialize audio if not playing yet"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 539141485587495
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 235499189209703,
+							"parameters": {
+								"tag": "\"theme\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 172590919657390,
+							"parameters": {
+								"audio-file": "soundtrack",
+								"loop": "looping",
+								"volume": "var_audio_volume_show",
+								"tag-optional": "\"theme\""
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "obj_player_fire_effect",
+							"sid": 927856497952953,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "player",
+								"x": true,
+								"y": true,
+								"angle": false,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_asteroid",
+							"sid": 250721418311212,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						}
+					],
+					"sid": 695903220819931
+				}
+			],
+			"sid": 821754038238251
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Time Record System",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 812616112735085,
+							"parameters": {
+								"variable": "var_player_death"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 724207356860382
+						}
+					],
+					"actions": [
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 961796589027498,
+							"parameters": {
+								"key": "\"storage_last_score\"",
+								"value": "var_time"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 727042501162134,
+							"parameters": {
+								"key": "\"storage_time_record\"",
+								"value": "var_time_record"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 429188221497986,
+							"parameters": {
+								"layer": "\"Record\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 946025356573124
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 968016926091721,
+							"parameters": {
+								"key": "\"storage_last_score\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 846026472467409,
+							"parameters": {
+								"key": "\"storage_last_score\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 214286598742690,
+							"parameters": {
+								"variable": "var_time_last_score",
+								"value": "LocalStorage.ItemValue"
+							}
+						}
+					],
+					"sid": 795224441215970
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-missing",
+							"objectClass": "LocalStorage",
+							"sid": 520265883754904,
+							"parameters": {
+								"key": "\"storage_last_score\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "txt_last_score",
+							"sid": 956378846537450,
+							"parameters": {
+								"text": "\"FUDEU HEIN\""
+							}
+						}
+					],
+					"sid": 155542022494393
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 607205022552035,
+							"parameters": {
+								"key": "\"storage_time_record\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 264382712152063,
+							"parameters": {
+								"key": "\"storage_time_record\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 296058839934999,
+							"parameters": {
+								"variable": "var_time_record",
+								"value": "LocalStorage.ItemValue"
+							}
+						}
+					],
+					"sid": 545040689375176
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-missing",
+							"objectClass": "LocalStorage",
+							"sid": 564252273043144,
+							"parameters": {
+								"key": "\"storage_time_record\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "txt_time_record",
+							"sid": 287254226691274,
+							"parameters": {
+								"text": "\"FUDEU HEIN\""
+							}
+						}
+					],
+					"sid": 120281660738892
+				},
+				{
+					"functionName": "restart_games",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 372439138440219,
+							"parameters": {
+								"variable": "var_time",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 892276362559789,
+							"parameters": {
+								"variable": "var_level",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 915457475841340,
+							"parameters": {
+								"variable": "var_player_death",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 131039795153697,
+							"parameters": {
+								"layer": "\"Record\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 718555826030774
+						}
+					],
+					"sid": 350327559404913
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 789094130058621,
+							"parameters": {
+								"key": 13
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "restart_games",
+							"sid": 725892169127144
+						}
+					],
+					"sid": 312992417353048
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 984565277256639
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "txt_last_score",
+							"sid": 495008080936835,
+							"parameters": {
+								"text": "\"YOUR TIME\" & var_time_last_score"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "txt_time_record",
+							"sid": 962064411476508,
+							"parameters": {
+								"text": "\"RECORD TIME\" & var_time_record"
+							}
+						}
+					],
+					"sid": 400111009514427
+				}
+			],
+			"sid": 729124632924689
 		}
 	],
 	"sid": 937162289713874
