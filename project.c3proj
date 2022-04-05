@@ -109,6 +109,14 @@
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
 		}
 	],
 	"uniqueId": "6czwhqt1t7a",
@@ -124,7 +132,8 @@
 			"obj_asteroid",
 			"txt_time",
 			"obj_camera",
-			"obj_impact_explosion"
+			"obj_impact_explosion",
+			"obj_black_fade"
 		],
 		"subfolders": []
 	},

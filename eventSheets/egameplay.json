@@ -3396,7 +3396,19 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 615442610602883,
+					"sid": 926679621535007,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"callFunction": "fade-in",
+					"sid": 371450235177672
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 439621897510138,
 					"parameters": {
 						"seconds": "1"
 					}
@@ -3445,6 +3457,18 @@
 					],
 					"actions": [
 						{
+							"callFunction": "fade-out",
+							"sid": 672707111974816
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 381485938057563,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
 							"id": "move-to-position",
 							"objectClass": "player",
 							"sid": 943720811192208,
@@ -3458,7 +3482,7 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 653437187227115,
+							"sid": 961217643553820,
 							"parameters": {
 								"seconds": "1.0"
 							}
@@ -3502,6 +3526,82 @@
 				}
 			],
 			"sid": 130085507381720
+		},
+		{
+			"functionName": "fade-in",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "obj_black_fade",
+					"sid": 438794726902116,
+					"parameters": {
+						"instance-variable": "option",
+						"comparison": 0,
+						"value": "\"in\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "start-fade",
+					"objectClass": "obj_black_fade",
+					"sid": 325372556205428,
+					"behaviorType": "Fade"
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "obj_black_fade",
+					"sid": 446174797436946,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 759716389521145
+		},
+		{
+			"functionName": "fade-out",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "obj_black_fade",
+					"sid": 536015385271810,
+					"parameters": {
+						"instance-variable": "option",
+						"comparison": 0,
+						"value": "\"out\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "start-fade",
+					"objectClass": "obj_black_fade",
+					"sid": 150710842801086,
+					"behaviorType": "Fade"
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "obj_black_fade",
+					"sid": 248971724552294,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 752453172821854
 		}
 	],
 	"sid": 937162289713874
