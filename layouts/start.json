@@ -255,7 +255,7 @@
 				{
 					"type": "txt_press_start",
 					"properties": {
-						"text": "press any key to start",
+						"text": "press enter to start",
 						"enable-bbcode": true,
 						"font": "Minecraftia-Regular",
 						"size": 8.308331298828127,

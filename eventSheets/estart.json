@@ -152,9 +152,12 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-any-key-pressed",
+					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 379148399274517
+					"sid": 967052613423557,
+					"parameters": {
+						"key": 13
+					}
 				}
 			],
 			"actions": [

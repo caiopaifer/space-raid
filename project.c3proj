@@ -160,7 +160,8 @@
 			"obj_selector",
 			"LocalStorage",
 			"txt_last_score",
-			"txt_time_record"
+			"txt_time_record",
+			"txt_time_new_record"
 		],
 		"subfolders": []
 	},
